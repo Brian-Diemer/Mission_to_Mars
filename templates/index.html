@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars News</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Info</a></p>
+    </div>
+      
+    <!-- Scraped Stuffs -->
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <h3><u>Latest News</u></h3>
+        <h4>{{ listings.news_title }}</h4>
+        <p>{{ listings.news_text }}</p>
+      </div>
+    </div>
+
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+        <h3><u>Featured Image</u></h3>
+        <img class="featured" src= {{ listings.featured_image }}>
+        </div>
+    </div>
+
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+        <h3><u>Weather on Mars</u></h3>
+            <p>{{ listings.Tweet }}</p>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+        <h3><u>Mars Facts</u></h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th style="text-align:center">Description</th>
+                <th style="text-align:center">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>{{ 'Equatorial Diameter' }}</td>
+            <td>{{ listings.facts.Value['Equatorial Diameter:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Polar Diameter' }}</td>
+            <td>{{ listings.facts.Value['Polar Diameter:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Mass' }}</td>
+            <td>{{ listings.facts.Value['Mass:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Moons' }}</td>
+            <td>{{ listings.facts.Value['Moons:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Orbit Distance' }}</td>
+            <td>{{ listings.facts.Value['Orbit Distance:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Orbit Period' }}</td>
+            <td>{{ listings.facts.Value['Orbit Period:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Surface Temperature' }}</td>
+            <td>{{ listings.facts.Value['Surface Temperature:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'First Record' }}</td>
+            <td>{{ listings.facts.Value['First Record:'] }}</td>
+            </tr>
+            <tr>
+            <td>{{ 'Recorded By' }}</td>
+            <td>{{ listings.facts.Value['Recorded By:'] }}</td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+        <h3><u>Hemisphere Images</u></h3>
+        <img class="Hemisphere Images" src= {{ listings.hemisphere_images[0]['link'] }}>
+        <p style="font-size: 20px">{{listings.hemisphere_images[0]['title']}}</p>
+        <img class="Hemisphere Images" src= {{ listings.hemisphere_images[1]['link'] }}>
+        <p style="font-size: 20px">{{listings.hemisphere_images[1]['title']}}</p>
+        <img class="Hemisphere Images" src= {{ listings.hemisphere_images[2]['link'] }}>
+        <p style="font-size: 20px">{{listings.hemisphere_images[2]['title']}}</p>
+        <img class="Hemisphere Images" src= {{ listings.hemisphere_images[3]['link'] }}>
+        <p style="font-size: 20px">{{listings.hemisphere_images[3]['title']}}</p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
